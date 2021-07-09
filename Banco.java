@@ -4,7 +4,8 @@ import java.util.Random;
 public class Banco {
 
         public static void main(String[] args){
-      
+
+               //Variaveis
                String nome;
                double inicial;
                Scanner entrada = new Scanner(System.in);
@@ -15,15 +16,17 @@ public class Banco {
                int opcao;
                double valor;
 
+               //Cadastro do cliente
                System.out.println("Cadastrando novo cliente.");
                System.out.print("Entre com seu nome: ");
                nome = entrada.nextLine();
-                                                                                                             
+                                    
+               //Deposito inicial
                System.out.print("Entre com o valor inicial depositado na conta: ");
                inicial = entrada.nextDouble();
-             
                saldo=inicial;
 
+               //Tela de opcção
                do{
                System.out.println("\t Escolha a opção desejada");
                System.out.println("1 - Consultar Extrato");
@@ -35,7 +38,7 @@ public class Banco {
                opcao = entrada.nextInt();
 
                switch(opcao){
-                               
+                               //Extrato
                        case 1:    
                                System.out.println("\tEXTRATO");
                                System.out.println("Nome: " + nome);
@@ -44,6 +47,7 @@ public class Banco {
                                System.out.println("Saques realizados hoje: " + saques + "\n");
                                break;
                                
+                               //Saque
                        case 2: 
                                if(saques<3){
                                        System.out.print("Quanto deseja sacar: ");
@@ -62,7 +66,8 @@ public class Banco {
                                        System.out.println("Limite de saques diários atingidos.\n");
                                }
                                break;
-                                                                                                                           
+                                      
+                               //Deposito
                        case 3:
                                System.out.print("Quanto deseja depositar: ");
                                valor = entrada.nextDouble();
@@ -70,7 +75,8 @@ public class Banco {
                                System.out.println("Depositado: " + valor);
                                System.out.println("Novo saldo: " + saldo + "\n");
                                break;
-                               
+
+                               //Saida do programa
                        case 4: 
                                System.out.println("Sistema encerrado.");
                                System.out.println("\nObrigado pela preferencia!");
